@@ -1,19 +1,6 @@
 const createFolder = require("./createFolder");
-const item = require('../models/item');
-const createFile = require("./createFile");
 const verifyTypeAndCreate = require("./verifyTypeAndCreate");
-
-const itemsModule = [
-    {
-        ...item('api', 'FOLDER'),
-        subitems: [
-            item('index.js', 'FILE')
-        ]
-    },
-    item('views', 'FOLDER'),
-    item('constants', 'FOLDER'),
-    item('components', 'FOLDER'),
-];
+const itemsModule = require("../templates/itemsModule");
 
 function createModule(name) {
     const basePath = `${process.env.PATH_TESTS}/${name}`;
