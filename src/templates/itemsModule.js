@@ -1,15 +1,17 @@
 const item = require("../models/item");
 
 const itemsModule = [
-    {
-        ...item('api', 'FOLDER'),
-        subitems: [
-            item('index.js', 'FILE')
-        ]
-    },
-    item('views', 'FOLDER'),
-    item('constants', 'FOLDER'),
-    item('components', 'FOLDER'),
+    item(
+        'main',
+        'FOLDER',
+        [
+            item('api', 'FOLDER', true),
+            item('views', 'FOLDER', true),
+            item('constants', 'FOLDER', true),
+            item('components', 'FOLDER', true),
+        ],
+        true
+    ),
 ];
 
 module.exports = itemsModule;
